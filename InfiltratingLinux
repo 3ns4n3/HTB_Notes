@@ -1,0 +1,20 @@
+1. enumerate host: nmap -sC -sV 10.129.201.101
+2. Ports open: 21,22,80,111,443,3306  RPCBIND on port 111 
+
+3. Navigate to IP via Browser and inspect
+4. Search for vulnerabilities
+5. Search for exploit modules
+6. Locate
+7.Execute
+8.Exploit
+
+Spawning a TTY Shell with Python
+python -c 'import pty; pty.spawn("/bin/sh")' 
+
+output: sh-4.2$         
+        sh-4.2$ whoami
+        whoami
+        apache
+
+commands used: 1. Exploit 2. Shell 3. whoami
+4. ls and cd to directory I need
