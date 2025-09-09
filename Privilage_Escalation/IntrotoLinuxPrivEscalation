@@ -1,0 +1,42 @@
+**INRO TO LINUX PRIV ESCALATION**
+-LinEnum script https://github.com/rebootuser/LinEnum
+1. OS Version
+   - check for public exploits
+2. Kernel Version
+   - check for public exploits
+3. Running Services
+   - particuarlly those running as root.
+   - ps aux | grep root
+4. Installed Packages and Versions
+   - could be used for priv esc vuln
+5. Logged in Users
+   - can be used for lateral movement or priv esc
+   - ps au (shows all proccess by which user)
+6. User Home Directories
+   - can hold SSH keys, scripts, and other files potentially containing login credentials.
+- ls /home
+7. Check individual user home directories
+  - ls -la /home/stacey.jenkings
+  - the 0la shows hidden files. check .bash_history for files that may contain interesting commands, config iles, and maybe SSH keys
+8. SSH Directory Contents
+- ls -l ~/.ssh
+- can display SSH key
+9. Bash History
+  - similar to .bash_history
+10. Sudo - list user's privs
+    - sudo -l
+    - often sudoer entries include NOPASSWD, meaning that the user can run the specified command without being prompted for a password
+    - if full sudo permsions issuing sudo su will give root permissions
+11. Search through all .conf and .config files
+12. Check if shadow file is readable. Use to collect all user password hashes
+13 check for password hashes in /etc/passwd just in case
+14. Cron jobs
+- ls -la /etc/cron.daily
+15. Unmounted File Systems and Additional Drives
+- lsblk
+16. SETUID and SETGID Permissions: Binaries are set with these permissions to allow a user to run a command as root, without having to grant root-level access to the user. Many binaries contain functionality that can be exploited to get a root shell.
+17. Writeable Directories
+  - useful to see where you can write so you can download tools to the system.
+18. find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null
+19. find writeable files
+    - find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null
