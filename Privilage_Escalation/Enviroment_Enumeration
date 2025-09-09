@@ -1,0 +1,29 @@
+Tools that can help: 
+https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS
+https://github.com/rebootuser/LinEnum
+
+After gaining shell check: 1. OS Version 2. Kernel Version 3. Running Services 
+
+Basic commands to orient: 
+1. whoami 
+2. id - what groups does our user belong to
+3. hostname -name and anything that can be learned from the naming convention
+4. ifconfig or ip a - what subnet are we in, does the host have additional NICs in other subnets
+5. sudo -l can we run anything as root without a password if we can drop into as root with sudo su = profit
+
+Commands in walkthrough
+
+cat /etc/os-release  : sows exact OS and anyversion info we may need. 
+
+echo $PATH   : swhere linux looks everytime a command is executed for any executable... may be used to leverage priv escalation
+
+env    : may get lucky and find a password, key or other sensitive info
+
+* Check kernel version: may be able to exploit a vulnerable Kernel with a public exploit 
+can use cat /proc/version or uname -a
+
+* check CPU type/version
+lscpu 
+
+* check login shells that exist. tmux and Screen are particularlly useful apparently 
+cat /etc/shells
