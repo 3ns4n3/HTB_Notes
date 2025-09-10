@@ -27,3 +27,15 @@ lscpu
 
 * check login shells that exist. tmux and Screen are particularlly useful apparently 
 cat /etc/shells
+
+check defenses to see if we can enumrate any of this.. 
+
+
+    Exec Shield
+    iptables
+    AppArmor
+    SELinux
+    Fail2ban
+    Snort
+    Uncomplicated Firewall (ufw)
+* lsblk to enumerate information about block devices on the system
