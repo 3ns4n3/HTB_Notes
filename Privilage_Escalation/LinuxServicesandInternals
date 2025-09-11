@@ -1,0 +1,41 @@
+**Enumeration**
+
+1. What services and applications are installed?
+2. What services are running?
+3. What sockets are in use?
+4. What users, admins and groups exist on the system?
+5. Who is current logged in? What users recently logged in?
+6. What password policies, if any are enforced on the host?
+7. Is the host joined to an Active Directory domain?
+8. What types of interesting information can we find in history, log, and backup files?
+9. Which files have modified recently and how often? Are there any interesting patterns in file modification that could indicate a cron job in use that we may be able to hijack?
+10. Current IP addressing information
+11. Anything interesting in the /etc/hosts file?
+12. Are there any interesting network connections to other systems in the internal network or even outside the network?
+13. What tools are installed on the system that we may be able to take advantage of? (Netcat, Perl, Python, Runy, Nmap, tcpdumo, gcc, etc.) 
+14. Can we access the bash_history file for any users and can we uncover anything from their recorded command line history such as passwords?
+15. Are any Cron jobs running on the system that we may be able to hijack? 
+16. Time to gather aas much network infomation as possible. 
+-- current IP address
+-- any other interfaces we could used to pivot into another subnet that was previously unreachable from attack host. (ip a / ifconfig) net tools must be present. 
+** Internals **
+1. Network Interfaces
+-- ip a
+2. Hosts 
+-- /etc/hosts
+3. User's last login
+-- lastlog 
+Logged In Users
+- use either the w command, who command or finger
+4. Command History 
+- check users previous bash history 
+- history 
+5. Finding History Files 
+- may need script to run to check old stuff. 
+find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/null
+
+6. Cron jobs 
+ls -la /etc/cron.daily/
+
+7. Proc filesystem 
+particular filesystem in Linux that contains information about system processes, hardware, and other system information
