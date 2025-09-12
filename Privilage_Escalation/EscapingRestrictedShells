@@ -21,3 +21,9 @@ it may be possible to escape from the shell by modifying the value of the enviro
 ** Shell Functions **
 For this we can define and call shell functions that execute commands not restricted by the shell. Let us say, the shell allows users to define and call shell functions, 
 it may be possible to escape from the shell by defining a shell function that executes a command.
+Check on learning: 
+
+break of restricted shell.. 
+echo ($<flag.txt)
+
+it worked because of command subsittution $(...) was the syntax the old was way `....` which may have worked as well
