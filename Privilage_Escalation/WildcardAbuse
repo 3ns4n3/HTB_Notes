@@ -1,0 +1,12 @@
+Wildcard can be used as a replacement for other characters by the shell before other actions. 
+Examples:
+*
+?
+[]
+~
+-
+The --checkpoint-action option permits an EXEC action to be executed when a checkpoint is reached (i.e., run an arbitrary operating system command once the tar command executes.) By creating files with these names, when the wildcard is specified, --checkpoint=1 and --checkpoint-action=exec=sh root.sh is passed to tar as command-line options. Let's see this in practice.
+
+Consider the following cron job, which is set up to back up the /home/htb-student directory's contents and create a compressed archive within /home/htb-student. The cron job is set to run every minute, so it is a good candidate for privilege escalation.
+
+Double check wild card abuse... doesnt make sense based off this module. 
