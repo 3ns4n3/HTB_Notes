@@ -10,3 +10,6 @@ The --checkpoint-action option permits an EXEC action to be executed when a chec
 Consider the following cron job, which is set up to back up the /home/htb-student directory's contents and create a compressed archive within /home/htb-student. The cron job is set to run every minute, so it is a good candidate for privilege escalation.
 
 Double check wild card abuse... doesnt make sense based off this module. 
+Check on Learning... 
+break of restricted shell.. 
+echo ($<flag.txt)
