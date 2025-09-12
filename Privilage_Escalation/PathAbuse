@@ -1,0 +1,17 @@
+PATH is an enviroment variable that specifies the set of directories where an executable can be located. 
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+Creating a script or program in adirectory specified in the PATH will make it executable from any directory on the system. 
+
+Adding . to a users PATH add current working directory to the list. If we can modify users path we can replace a common binary i.e. ls with a malicious script. 
+if we run **PATH=.:$PATH and the export PATH**  we can run binaries located in our current working directory. 
+
+**EXAMPLE**
+htb_student@NIX02:~$ PATH=.:${PATH}
+htb_student@NIX02:~$ export PATH
+htb_student@NIX02:~$ echo $PATH
+
+ touch ls
+htb_student@NIX02:~$ echo 'echo "PATH ABUSE!!"' > ls
+htb_student@NIX02:~$ chmod +x ls
