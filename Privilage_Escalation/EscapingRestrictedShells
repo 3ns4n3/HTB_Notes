@@ -1,0 +1,23 @@
+Examples:
+1. RBASH restricted standard bourne shell
+2. RKSH restricted version of Korn shell. 
+3. RZSH restricted version of the Z shell. 
+
+Ways out:
+** Command Injection **
+if we are able to run the ls command we can try command injection to add more commands. 
+
+** Command Substitution **
+ For example, imagine the shell allows users to execute commands by enclosing them in backticks (`). In that case,
+it may be possible to escape from the shell by executing a command in a backtick substitution that is not restricted by the shell.
+
+** Command Chaining **
+use ; or | to execute a command. 
+
+** Environment Variables **
+ if the shell uses an environment variable to specify the directory in which commands are executed,
+it may be possible to escape from the shell by modifying the value of the environment variable to specify a different directory.
+
+** Shell Functions **
+For this we can define and call shell functions that execute commands not restricted by the shell. Let us say, the shell allows users to define and call shell functions, 
+it may be possible to escape from the shell by defining a shell function that executes a command.
