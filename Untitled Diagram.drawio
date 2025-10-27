@@ -201,9 +201,6 @@
         <mxCell id="TnTFWZ-Hbo-qFbYyvlhM-79" value="REDHOSTS" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1015" y="90" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TnTFWZ-Hbo-qFbYyvlhM-80" value="172.16.140.6/29" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="160" width="110" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="TnTFWZ-Hbo-qFbYyvlhM-81" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="TnTFWZ-Hbo-qFbYyvlhM-66">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="950" y="210" as="sourcePoint" />
@@ -242,6 +239,18 @@
             <mxPoint x="950" y="210" as="sourcePoint" />
             <mxPoint x="1000" y="160" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="TnTFWZ-Hbo-qFbYyvlhM-92" value="172.16.140.5&lt;div&gt;REDPOP2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TnTFWZ-Hbo-qFbYyvlhM-93" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="TnTFWZ-Hbo-qFbYyvlhM-92">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="950" y="210" as="sourcePoint" />
+            <mxPoint x="1035" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TnTFWZ-Hbo-qFbYyvlhM-95" value="172.16.140.6/29" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="970" y="150" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
